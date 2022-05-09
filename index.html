@@ -9,37 +9,44 @@
 <body>
     <div class="root-wrap">
         <section>
-            <h1 onclick="clickTest">GitHub Portfolio</h1>
+            <button id="testBtn">GitHub Portfolio</button>
         </section>
     </div>
     <script type="module">
-        // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.0/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.0/firebase-analytics.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-      
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.8.0/firebase-firestore.js";
+
         const firebaseConfig = {
-          apiKey: "AIzaSyBQBsn6gTgjdX8yaU4OFWkijjHJvSy8lZQ",
-          authDomain: "github-24fff.firebaseapp.com",
-          projectId: "github-24fff",
-          storageBucket: "github-24fff.appspot.com",
-          messagingSenderId: "729292272177",
-          appId: "1:729292272177:web:1c01dab304abc652d2db10",
-          measurementId: "G-LPCLBPQ75G"
+            apiKey: "AIzaSyBQBsn6gTgjdX8yaU4OFWkijjHJvSy8lZQ",
+            authDomain: "github-24fff.firebaseapp.com",
+            projectId: "github-24fff",
+            storageBucket: "github-24fff.appspot.com",
+            messagingSenderId: "729292272177",
+            appId: "1:729292272177:web:1c01dab304abc652d2db10",
+            measurementId: "G-LPCLBPQ75G"
         };
       
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const analytics = getAnalytics(app);
-    </script>
-    <script>
-        let database = app.database();
-        function clickTest() {
-            database.ref('test/').set({"name": "테스트2", "intro": "인삿말"})
-        }
+        const db = getFirestore(app);
+
+        const testBtn = document.getElementById("testBtn");
+        testBtn.addEventListener("click", ev => {
+            try {
+                const docRef = addDoc(collection(db, "users"), {
+                    first: "Ada1",
+                    last: "Lovelac1e",
+                    born: 18151
+                });
+                console.log("Document written with Id: ", docRef.id);
+            } catch (e) {
+                console.error("Error adding document: ", e);
+            }
+        });
+
+        
     </script>
 </body>
 </html>
