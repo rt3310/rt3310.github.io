@@ -9,7 +9,7 @@
 <body>
     <div class="root-wrap">
         <section>
-            <h1>GitHub Portfolio</h1>
+            <h1 onclick="">GitHub Portfolio</h1>
         </section>
     </div>
     <script type="module">
@@ -34,6 +34,12 @@
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const analytics = getAnalytics(app);
-      </script>
+    </script>
+    <script>
+        let database = app.database();
+        function clickTest() {
+            database.ref('test/').set({"name": "테스트2", "intro": "인삿말"})
+        }
+    </script>
 </body>
 </html>
