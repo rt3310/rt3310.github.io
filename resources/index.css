@@ -129,12 +129,13 @@ input:-webkit-autofill{
 
 .nav-area {
     display: none;
+    z-index: 999;
 }
 
 .open .nav-area {
     position: absolute;
     height: 100%;
-    background-color: #0008;
+    background-color: #222;
     animation: nav-fade-in 1s 0.2s both;
     z-index: 99;
     display: block;
@@ -193,31 +194,38 @@ input:-webkit-autofill{
     width: 100%;
 }
 
-.open #nav-open {
-    display: none;
-}
-
-.info {
+.nav-footer-info {
     display: flex;
     align-items: center;
     color: #fff;
 }
 
-.info > li {
+.nav-footer-info > li {
     margin: 10px;
 }
 
-.info img {
+.nav-footer-info img {
     width: 30px;
 }
 
-.info .email, .info .github {
+.nav-footer-info .email, .nav-footer-info .github {
     cursor: pointer;
     transition-duration: 0.5s;
 }
 
-.info .email:hover, .info .github:hover {
+.nav-footer-info .email:hover, .nav-footer-info .github:hover {
     transform: translateY(-2px);
+}
+
+.main-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0007;
+    display: flex;
+    align-items: center;
 }
 
 #nav-open {
@@ -225,6 +233,42 @@ input:-webkit-autofill{
     color: #fff;
     font-size: 18px;
     margin: 10px 20px;
+    align-self: flex-start;
+}
+
+.open #nav-open {
+    display: none;
+}
+
+.open .main-header {
+    margin-left: 400px;
+}
+
+.main-header {
+    color: #fff;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.greeting {
+    font-size: 72px;
+}
+
+.main-intro {
+    font-size: 36px;
+}
+
+.greeting::before {
+    content: "";
+    animation: changeText 12s ease 0s infinite normal forwards;
+}
+
+.main-intro::before {
+    content: "";
+    animation: changeIntro 12s ease 0s infinite normal forwards;
 }
 
 #introduce {
@@ -238,6 +282,9 @@ input:-webkit-autofill{
     width: 600px;
     height: 600px;
     background-color: #111;
+    padding: 40px;
+    display: flex;
+    opacity: 0;
 }
 
 .intro-box.one {
@@ -247,8 +294,27 @@ input:-webkit-autofill{
 }
 
 .intro-box.two {
-    top: 300px;
+    top: 320px;
     right: 700px;
+}
+
+.intro-box.three {
+    color: #fff;
+    top: 100px;
+    right: 50px;
+    height: 800px;
+    background-color: #222;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.intro-box.three h1 {
+    font-size: 48px;
+    margin: 0 0 20px;
+}
+
+.my-info > li {
+    font-size: 18px;
 }
 
 #skill {
@@ -286,12 +352,70 @@ input:-webkit-autofill{
     }
 }
 
-@keyframes test {
+@keyframes changeText {
     0% {
-        left: -600px;
+        opacity: 0;
+        content: "안녕하세요";
+    }
+
+    20% {
+        opacity: 1;
+        content: "안녕하세요";
+    }
+
+    30% {
+        content: "안녕하세요";
+    }
+
+    40% {
+        opacity: 0;
+    }
+
+    55% {
+        content: "Hello";
+    }
+
+    60% {
+        opacity: 1;
+        content: "Hello";
     }
 
     100% {
-        left: 100px;
+        opacity: 0;
+        content: "Hello";
+    }
+}
+
+@keyframes changeIntro {
+    0% {
+        opacity: 0;
+        content: "서원호의 포트폴리오 입니다.";
+    }
+
+    20% {
+        opacity: 1;
+        content: "서원호의 포트폴리오 입니다.";
+    }
+
+    30% {
+        content: "서원호의 포트폴리오 입니다.";
+    }
+
+    40% {
+        opacity: 0;
+    }
+
+    55% {
+        content: "WonHo, Seo's Portfolio.";
+    }
+
+    60% {
+        opacity: 1;
+        content: "WonHo, Seo's Portfolio.";
+    }
+
+    100% {
+        opacity: 0;
+        content: "WonHo, Seo's Portfolio.";
     }
 }

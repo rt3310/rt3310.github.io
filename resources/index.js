@@ -11,6 +11,7 @@ const introduce = document.getElementById('introduce');
 
 const introBoxOne = document.querySelector('.intro-box.one');
 const introBoxTwo = document.querySelector('.intro-box.two');
+const introBoxThree = document.querySelector('.intro-box.three');
 
 goIntroduceBtn.addEventListener('click', ev => {
     scrollTo({ top: main.offsetHeight, behavior: 'smooth' });
@@ -50,11 +51,15 @@ window.addEventListener('scroll', ev => {
         introBoxOne.style.opacity = `${((document.documentElement.scrollTop) / (main.offsetHeight / 2))}`
         introBoxTwo.style.right = `${((document.documentElement.scrollTop) / (main.offsetHeight / 2)) * 1300 - 600}px`
         introBoxTwo.style.opacity = `${((document.documentElement.scrollTop) / (main.offsetHeight / 2))}`
+        introBoxThree.style.right = `${((document.documentElement.scrollTop) / (main.offsetHeight / 2)) * 150 - 100}px`
+        introBoxThree.style.opacity = `${((document.documentElement.scrollTop) / (main.offsetHeight / 2))}`
     } else {
         introBoxOne.style.left = `100px`;
         introBoxOne.style.opacity = `1`;
         introBoxTwo.style.right = `700px`;
         introBoxTwo.style.opacity = `1`;
+        introBoxThree.style.right = `50px`;
+        introBoxThree.style.opacity = `1`;
     }
     progressBar.style.width = `${((document.documentElement.scrollTop + document.documentElement.offsetHeight) / document.documentElement.scrollHeight) * 100}%`;
 })
