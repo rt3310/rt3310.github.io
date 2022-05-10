@@ -13,6 +13,10 @@ const introBoxOne = document.querySelector('.intro-box.one');
 const introBoxTwo = document.querySelector('.intro-box.two');
 const introBoxThree = document.querySelector('.intro-box.three');
 
+const skillTitle = document.getElementById('skill-title');
+
+const topBtn = document.getElementById('top-btn');
+
 goIntroduceBtn.addEventListener('click', ev => {
     scrollTo({ top: main.offsetHeight, behavior: 'smooth' });
 });
@@ -37,13 +41,19 @@ navOpenBtn.addEventListener('click', ev => {
     main.classList.toggle('open');
 });
 
+topBtn.addEventListener('click', ev => {
+    scrollTo({ top: 0, behavior: 'smooth' });
+})
+
 window.addEventListener('scroll', ev => {
-    if (document.documentElement.scrollTop > 5) {
+    if (document.documentElement.scrollTop > 10) {
         progressBar.style.display = 'block';
         backgroundBar.style.display = 'block';
+        topBtn.style.display = 'block';
     } else {
         progressBar.style.display = 'none';
         backgroundBar.style.display = 'none';
+        topBtn.style.display = 'none';
     }
 
     if (document.documentElement.scrollTop < main.offsetHeight / 2) {
@@ -61,5 +71,11 @@ window.addEventListener('scroll', ev => {
         introBoxThree.style.right = `50px`;
         introBoxThree.style.opacity = `1`;
     }
+
+    if (document.documentElement.scrollTop > (main.offsetHeight + (introduce.offsetHeight / 2))) {
+        skillTitle.style.display = 'block';
+    } else {
+        skillTitle.style.display = 'none';
+    }
     progressBar.style.width = `${((document.documentElement.scrollTop + document.documentElement.offsetHeight) / document.documentElement.scrollHeight) * 100}%`;
-})
+});

@@ -338,8 +338,28 @@ input:-webkit-autofill{
 }
 
 #skill {
+    position: relative;
     height: 100%;
-    background-color: #aaf;
+}
+
+#skill-title {
+    display: none;
+    font-size: 48px;
+    position: absolute;
+    top: 30px;
+    width: 200px;
+    padding: 0 30px 0 50px;
+    animation: opacity-fade-in 1s both;
+}
+
+#skill-title::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    animation: width-fade-in 1s both;
+    height: 100%;
+    border-bottom: 3px solid #ffd942;
 }
 
 #experience {
@@ -350,6 +370,43 @@ input:-webkit-autofill{
 #project {
     height: 100%;
     background-color: #aff;
+}
+
+#top-btn {
+    display: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: #000;
+    font-size: 24px;
+    color: #fff;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    transition-duration: 0.5s;
+}
+
+#top-btn:hover {
+    transform: translateY(-5px);
+}
+
+@keyframes width-fade-in {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes opacity-fade-in {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 @keyframes main-fade-in {
