@@ -255,20 +255,24 @@ input:-webkit-autofill{
 
 .greeting {
     font-size: 72px;
+    text-align: center;
 }
 
 .main-intro {
     font-size: 36px;
+    text-align: center;
 }
 
 .greeting::before {
     content: "";
     animation: changeText 12s ease 0s infinite normal forwards;
+    white-space: pre;
 }
 
 .main-intro::before {
     content: "";
     animation: changeIntro 12s ease 0s infinite normal forwards;
+    white-space: pre;
 }
 
 #introduce {
@@ -389,16 +393,16 @@ input:-webkit-autofill{
 @keyframes changeIntro {
     0% {
         opacity: 0;
-        content: "서원호의 포트폴리오 입니다.";
+        content: "개발로 세상을 바꾸고 싶어하는\A서원호의 포트폴리오 입니다.";
     }
 
     20% {
         opacity: 1;
-        content: "서원호의 포트폴리오 입니다.";
+        content: "개발로 세상을 바꾸고 싶어하는\A서원호의 포트폴리오 입니다.";
     }
 
     30% {
-        content: "서원호의 포트폴리오 입니다.";
+        content: "개발로 세상을 바꾸고 싶어하는\A서원호의 포트폴리오 입니다.";
     }
 
     40% {
@@ -406,16 +410,16 @@ input:-webkit-autofill{
     }
 
     55% {
-        content: "WonHo, Seo's Portfolio.";
+        content: "Wonho Seo's Portfolio,\AI wants to change the world through development.";
     }
 
     60% {
         opacity: 1;
-        content: "WonHo, Seo's Portfolio.";
+        content: "Wonho Seo's Portfolio,\AI wants to change the world through development.";
     }
 
     100% {
         opacity: 0;
-        content: "WonHo, Seo's Portfolio.";
+        content: "Wonho Seo's Portfolio,\AI wants to change the world through development.";
     }
 }
