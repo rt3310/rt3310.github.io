@@ -5,13 +5,60 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>백트폴리오</title>
+    <link rel="stylesheet" href="./resources/index.css">
 </head>
 <body>
-    <div class="root-wrap">
-        <section>
-            <button id="testBtn">GitHub Portfolio</button>
-        </section>
-    </div>
+    <div id="progress-bar"></div>
+    <div id="background-bar"></div>
+    <section id="main" class="open">
+        <div class="nav-area">
+            <div class="nav-container">
+                <button id="nav-close"><i class="fa-solid fa-arrow-left"></i></button>
+                <ul class="nav">
+                    <li id="go-introduce">
+                        <p>Introduce</p>
+                    </li>
+                    <li id="go-skill">
+                        <p>Skill</p>
+                    </li>
+                    <li id="go-experience">
+                        <p>Experience</p>
+                    </li>
+                    <li id="go-project">
+                        <p>Project</p>
+                    </li>
+                </ul>
+                <div class="nav-footer">
+                    <ul class="info">
+                        <li class="name">서원호</li>
+                        <li class="email"><img src="./resources/google.png" alt=""></li>
+                        <li class="github"><img src="./resources/github.png" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="main-container">
+            <button id="nav-open"><i class="fa-solid fa-bars"></i></button>
+        </div>
+    </section>
+    <section id="introduce">
+        <div class="intro-box one">
+
+        </div>
+
+        <div class="intro-box two">
+        
+        </div>
+    </section>
+    <section id="skill">
+
+    </section>
+    <section id="experience">
+
+    </section>
+    <section id="project">
+
+    </section>
     <script type="module">
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.8.0/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.8.0/firebase-analytics.js";
@@ -48,5 +95,7 @@
 
         
     </script>
+    <script src="./resources/index.js"></script>
+    <script src="https://kit.fontawesome.com/05ea6bafb2.js" crossorigin="anonymous"></script>
 </body>
 </html>

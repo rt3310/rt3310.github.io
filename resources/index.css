@@ -1,0 +1,297 @@
+@charset "UTF-8";
+/* 공통 */
+*, :after, :before {
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+}
+
+html, body {
+    height: 100%
+}
+
+body {
+    margin: 0 auto;
+    -webkit-text-size-adjust: none;
+}
+
+body, button, div, dl, dt, fieldset, form,
+h1, h2, h3, h4, h5, h6, input, legend, li, ol, ul,
+p, select, td, th, textarea, table {
+    margin: 0;
+    padding: 0;
+}
+
+body, button, input, select, td, th, textarea {
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: Apple SD Gothic Neo, Malgun Gothic, 맑은 고딕, sans-serif;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+img {
+    vertical-align:top
+}
+
+a {
+    color: inherit;
+}
+
+a, a:active, a:hover  {
+    text-decoration: none;
+}
+
+nav, dl, ol, ul, li, menu {
+    list-style: none;
+}
+
+button, input, select, textarea {
+    vertical-align: middle;
+    font-size: 100%;
+}
+
+button, input {
+    -webkit-border-radius:0;
+    border-radius:0;
+    border:0;
+}
+
+button {
+    cursor: pointer;
+}
+
+html input[type=button], input[type=email], input[type=password], input[type=reset],
+input[type=search], input[type=search], input[type=tel], input[type=text],
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+blockquote, q {
+    quotes: none;
+}
+
+blockquote:after, blockquote:before, q:after, q:before {
+    content: "";
+    content: none;
+}
+
+input:-webkit-autofill{
+    -webkit-box-shadow: 0 0 0 1000px white inset;
+}
+
+/* wrap */
+/* #root-wrap {
+    min-width: 1280px;
+    min-height: 100vh;
+} */
+
+.wrap {
+    width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+/* section */
+#progress-bar {
+    display: none;
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+    z-index: 10000;
+}
+
+#background-bar {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #eee;
+    z-index: 9999;
+}
+
+#main {
+    height: 100%;
+    background-color: #88b;
+    background-image: url('./coding-ge7cc233ae_1920.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    animation: main-fade-in 1s both;
+}
+
+.nav-area {
+    display: none;
+}
+
+.open .nav-area {
+    position: absolute;
+    height: 100%;
+    background-color: #0008;
+    animation: nav-fade-in 1s 0.2s both;
+    z-index: 99;
+    display: block;
+}
+
+.nav-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#nav-close {
+    align-self: flex-end;
+    background-color: transparent;
+    color: #fff;
+    font-size: 18px;
+    margin: 10px 20px;
+}
+
+.nav {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.nav > li {
+    color: #fff;
+    width: 200px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav > li > p {
+    font-size: 18px;
+    position: relative;
+    cursor: pointer;
+}
+
+.nav > li > p::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: "";
+    border-bottom: 1px solid #fff;
+    transition-duration: 0.5s;
+    width: 0;
+}
+
+.nav > li > p:hover::after {
+    width: 100%;
+}
+
+.open #nav-open {
+    display: none;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.info > li {
+    margin: 10px;
+}
+
+.info img {
+    width: 30px;
+}
+
+.info .email, .info .github {
+    cursor: pointer;
+    transition-duration: 0.5s;
+}
+
+.info .email:hover, .info .github:hover {
+    transform: translateY(-2px);
+}
+
+#nav-open {
+    background-color: transparent;
+    color: #fff;
+    font-size: 18px;
+    margin: 10px 20px;
+}
+
+#introduce {
+    position: relative;
+    height: 100%;
+    background-color: #333;
+}
+
+.intro-box {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background-color: #111;
+}
+
+.intro-box.one {
+    top: 50px;
+    left: -600px; /* to 100px */
+    z-index: 99;
+}
+
+.intro-box.two {
+    top: 300px;
+    right: 700px;
+}
+
+#skill {
+    height: 100%;
+    background-color: #aaf;
+}
+
+#experience {
+    height: 100%;
+    background-color: #ffa;
+}
+
+#project {
+    height: 100%;
+    background-color: #aff;
+}
+
+@keyframes main-fade-in {
+    0% {
+        height: 0;
+    }
+    100% {
+        height: 100%;
+    }
+    
+}
+
+@keyframes nav-fade-in {
+    0% {
+        width: 0px;
+    }
+
+    100% {
+        width: 400px;
+    }
+}
+
+@keyframes test {
+    0% {
+        left: -600px;
+    }
+
+    100% {
+        left: 100px;
+    }
+}
