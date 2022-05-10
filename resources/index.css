@@ -278,38 +278,54 @@ input:-webkit-autofill{
 #introduce {
     position: relative;
     height: 100%;
-    background-color: #333;
+    background-color: #fff;
 }
 
 .intro-box {
     position: absolute;
     width: 600px;
     height: 600px;
-    background-color: #111;
+    background-color: #fff0aa;
     padding: 40px;
     display: flex;
     opacity: 0;
+    color: #221811;
+    flex-direction: column;
+    font-size: 18px;
 }
 
 .intro-box.one {
     top: 50px;
     left: -600px; /* to 100px */
     z-index: 99;
+    box-shadow: 5px 5px 10px 3px #ddd;
 }
 
 .intro-box.two {
     top: 320px;
     right: 700px;
+    z-index: 99;
+    box-shadow: 5px 5px 10px 3px #ddd;
+}
+
+.intro-box.one h1, .intro-box.two h1 {
+    font-size: 32px;
+    margin: 0 0 40px;
+}
+
+.intro-box.one div,
+.intro-box.two div {
+    font-style: italic;
 }
 
 .intro-box.three {
-    color: #fff;
     top: 100px;
     right: 50px;
     height: 800px;
-    background-color: #222;
-    flex-direction: column;
+    background-color: #fff;
     align-items: flex-end;
+    border-top: 5px solid #221811;
+    border-bottom: 5px solid #221811;
 }
 
 .intro-box.three h1 {
