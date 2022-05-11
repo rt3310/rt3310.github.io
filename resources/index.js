@@ -14,6 +14,7 @@ const introBoxTwo = document.querySelector('.intro-box.two');
 const introBoxThree = document.querySelector('.intro-box.three');
 
 const skillTitle = document.getElementById('skill-title');
+const skillAreas = document.querySelectorAll('.skill-area');
 
 const topBtn = document.getElementById('top-btn');
 
@@ -74,8 +75,10 @@ window.addEventListener('scroll', ev => {
 
     if (document.documentElement.scrollTop > (main.offsetHeight + (introduce.offsetHeight / 2))) {
         skillTitle.style.display = 'block';
+        skillAreas.forEach(e => { e.style.display = 'flex'; });
     } else {
         skillTitle.style.display = 'none';
+        skillAreas.forEach(e => { e.style.display = 'none'; });
     }
     progressBar.style.width = `${((document.documentElement.scrollTop + document.documentElement.offsetHeight) / document.documentElement.scrollHeight) * 100}%`;
 });
